@@ -55,6 +55,12 @@ class VatValidate
 
     /* ********************************************************** EuropeanVat */
 
+    public function getAvailableCountryCodes()
+    {
+        $EuropeanVatService = new EuropeanVatService();
+        return $EuropeanVatService->getCountryCodes();
+    }
+
     public function checkEuropeanVat(string $vat, string $countryCode = 'ES')
     {
         $EuropeanVatService = new EuropeanVatService();

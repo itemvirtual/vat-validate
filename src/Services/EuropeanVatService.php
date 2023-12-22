@@ -21,6 +21,11 @@ class EuropeanVatService
         return preg_match($this->patterns[$countryCode], $vat);
     }
 
+    public function getCountryCodes()
+    {
+        return array_keys($this->patterns);
+    }
+
     private $patterns = [
         'AT' => '/^(U\d{8}$)/i',                                   // Austria
         'BE' => '/^(\d{10}$)/i',                                   // Belgium
