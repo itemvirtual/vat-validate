@@ -11,7 +11,7 @@ class ViesService
 
     public function check(string $vat, string $countryCode = 'ES')
     {
-        $vat = $this->cleanVat($vat, $countryCode);
+        $vat = $this->cleanVat($vat);
         $countryCode = strtoupper($countryCode);
 
         $client = new \SoapClient('http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl');
