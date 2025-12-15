@@ -18,9 +18,7 @@ trait VatTrait
         $vat = strtoupper($vat);
         $countryCode = strtoupper($countryCode);
 
-        if ($countryCode == 'GR') {
-            $countryCode = 'EL';
-        }
+        $countryCode = $this->replaceCountryCode($countryCode);
 
         if ($countryCode && strpos($vat, $countryCode) === 0) {
             $vat = substr($vat, strlen($countryCode));
@@ -32,9 +30,19 @@ trait VatTrait
     public function getFullFormatedVat($vat, $countryCode)
     {
         $vat = $this->cleanVat($vat);
-        if ($countryCode == 'GR') {
-            $countryCode = 'EL';
-        }
+        $countryCode = $this->replaceCountryCode($countryCode);
         return strtoupper($countryCode) . $vat;
+    }
+
+    private function replaceCountryCode($countryCode)
+    {
+        $arReplace = [
+            'GR' => 'EL',
+        ];
+
+        if (array_key_exists($countryCode, $arReplace)) {
+            return $arReplace[$countryCode];
+        }
+        return $countryCode;
     }
 }

@@ -2,6 +2,10 @@
 
 All notable changes to `vat-validate` will be documented in this file
 
+## 1.0.4 - 2025-12-15
+
+- ViesService add `replaceCountryCode()`  and `cleanVatAndRemoveCountryCode()`
+
 ## 1.0.3 - 2025-12-15
 
 - Change `$patterns` to add Country Codes and remove from `Traits/VatTrait.php` `cleanVat()` 

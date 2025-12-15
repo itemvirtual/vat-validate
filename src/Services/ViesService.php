@@ -11,7 +11,8 @@ class ViesService
 
     public function check(string $vat, string $countryCode = 'ES')
     {
-        // $vat = $this->cleanVat($vat);
+        $countryCode = $this->replaceCountryCode($countryCode);
+
         $vat = $this->cleanVatAndRemoveCountryCode($vat, $countryCode);
         $countryCode = strtoupper($countryCode);
 
