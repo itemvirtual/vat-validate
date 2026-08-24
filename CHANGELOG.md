@@ -2,6 +2,10 @@
 
 All notable changes to `vat-validate` will be documented in this file
 
+## 1.0.5 - 2026-08-24
+
+- Add `config('vat-validate.check_vat_service_url')`
+
 ## 1.0.4 - 2025-12-15
 
 - ViesService add `replaceCountryCode()`  and `cleanVatAndRemoveCountryCode()`

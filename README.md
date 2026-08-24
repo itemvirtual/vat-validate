@@ -1,9 +1,9 @@
 # Vat Validate
+
 > Laravel package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/itemvirtual/vat-validate.svg?style=flat-square)](https://packagist.org/packages/itemvirtual/vat-validate)
 [![Total Downloads](https://img.shields.io/packagist/dt/itemvirtual/vat-validate.svg?style=flat-square)](https://packagist.org/packages/itemvirtual/vat-validate)
-
 
 ## Installation
 
@@ -11,6 +11,16 @@ You can install the package via composer:
 
 ```bash
 composer require itemvirtual/vat-validate
+```
+
+Publish config file (with --force option to update)
+
+```bash
+php artisan vendor:publish --provider="Itemvirtual\VatValidate\VatValidateServiceProvider" --tag=config
+```
+
+```env
+VIES_CHECK_VAT_SERVICE_URL="https://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl"
 ```
 
 ## Usage
@@ -26,6 +36,7 @@ use Itemvirtual\VatValidate\Facades\VatValidate;
 ```php
 VatValidate::checkSpanishVat($vat);
 ```
+
 or you can do it for a specific type of document
 
 ```php
@@ -48,7 +59,9 @@ VatValidate::checkVies($vat, $countryCode);
 ```
 
 #### · Helper methods
+
 Get VAT number formatted with country code
+
 ```php
 VatValidate::getFullFormatedVat($vat, $countryCode);
 ```
@@ -102,9 +115,9 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
--   [Sergio](https://github.com/sergio-item)
--   [Itemvirtual](https://github.com/itemvirtual)
--   [All Contributors](../../contributors)
+- [Sergio](https://github.com/sergio-item)
+- [Itemvirtual](https://github.com/itemvirtual)
+- [All Contributors](../../contributors)
 
 ## License
 

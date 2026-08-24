@@ -16,7 +16,7 @@ class ViesService
         $vat = $this->cleanVatAndRemoveCountryCode($vat, $countryCode);
         $countryCode = strtoupper($countryCode);
 
-        $client = new \SoapClient('http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl');
+        $client = new \SoapClient(config('vat-validate.check_vat_service_url'));
 
         if ($client) {
             $params = array('countryCode' => $countryCode, 'vatNumber' => $vat);
